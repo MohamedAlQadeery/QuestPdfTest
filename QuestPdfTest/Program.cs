@@ -24,7 +24,7 @@ var document = Document.Create(container =>
             column.Spacing(20);
 
             AddChartRow(column, "Pressure", "Territory", "Fight");
-            AddChartRow(column, "Role/Game Impact","","");
+            AddChartRow(column, "Role/Game Impact", "", "");
             AddPlayerTable(column);
         });
     });
@@ -141,15 +141,15 @@ void AddPlayerTable(ColumnDescriptor column)
         });
 
         var players = new[]
-        {
-            new { Name = "P.Lipinski", Pressure = 2.0f, Territory = 1.5f, Fight = 1.5f, RoleGameImpact = 1.5f, BF = 1.6f },
-            new { Name = "I.Quaynor", Pressure = 2.2f, Territory = 1.8f, Fight = 2.0f, RoleGameImpact = 1.8f, BF = 2.0f },
-            new { Name = "B.Maynard", Pressure = 1.5f, Territory = 1.0f, Fight = 1.5f, RoleGameImpact = 1.0f, BF = 1.3f },
-            new { Name = "J.Elliott", Pressure = 2.0f, Territory = 1.0f, Fight = 1.0f, RoleGameImpact = 1.0f, BF = 1.3f },
-            new { Name = "J.Daicos", Pressure = 1.0f, Territory = 1.8f, Fight = 1.5f, RoleGameImpact = 1.8f, BF = 1.5f },
-            new { Name = "L.Schultz", Pressure = 2.8f, Territory = 3.2f, Fight = 3.2f, RoleGameImpact = 3.2f, BF = 3.1f },
-            new { Name = "J.Noble", Pressure = 1.2f, Territory = 3.0f, Fight = 2.5f, RoleGameImpact = 2.5f, BF = 2.3f },
-            new { Name = "S.Pendlebury", Pressure = 3.0f, Territory = 2.0f, Fight = 2.5f, RoleGameImpact = 2.2f, BF = 2.4f },
+           {
+            new { Name = "A. Smith", Pressure = 2.0f, Territory = 1.5f, Fight = 1.5f, RoleGameImpact = 1.5f, BF = 1.6f },
+            new { Name = "B. Johnson", Pressure = 2.2f, Territory = 1.8f, Fight = 2.0f, RoleGameImpact = 1.8f, BF = 2.0f },
+            new { Name = "C. Williams", Pressure = 1.5f, Territory = 1.0f, Fight = 1.5f, RoleGameImpact = 1.0f, BF = 1.3f },
+            new { Name = "D. Brown", Pressure = 2.0f, Territory = 1.0f, Fight = 1.0f, RoleGameImpact = 1.0f, BF = 1.3f },
+            new { Name = "E. Jones", Pressure = 1.0f, Territory = 1.8f, Fight = 1.5f, RoleGameImpact = 1.8f, BF = 1.5f },
+            new { Name = "F. Davis", Pressure = 2.8f, Territory = 3.2f, Fight = 3.2f, RoleGameImpact = 3.2f, BF = 3.1f },
+            new { Name = "G. Miller", Pressure = 1.2f, Territory = 3.0f, Fight = 2.5f, RoleGameImpact = 2.5f, BF = 2.3f },
+            new { Name = "H. Wilson", Pressure = 3.0f, Territory = 2.0f, Fight = 2.5f, RoleGameImpact = 2.2f, BF = 2.4f },
         };
 
         foreach (var player in players)
