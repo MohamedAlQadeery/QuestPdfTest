@@ -24,7 +24,7 @@ var document = Document.Create(container =>
             column.Spacing(20);
 
             AddChartRow(column, "Pressure", "Territory", "Fight");
-            AddChartRow(column, "Role/Game Impact", "", "");
+            AddChartRow(column, "Role/Game Impact","","");
             AddPlayerTable(column);
         });
     });
@@ -42,18 +42,23 @@ void AddChartRow(ColumnDescriptor column, params string[] chartTitles)
                 col.Item().Text(title).FontSize(14).Bold();
                 col.Item().Height(300).SkiaSharpRasterized((canvas, size) =>
                 {
+                    var entries = GetChartEntries(title);
+                    
+
                     var chart = new BarChart
                     {
-                        Entries = GetChartEntries(title),
-                        LabelOrientation = Orientation.Vertical, // Use vertical labels on the left
-                        ValueLabelOrientation = Orientation.Horizontal, // Values on the right
+                        Entries = entries,
+                        LabelOrientation = Orientation.Vertical,
+                        ValueLabelOrientation = Orientation.Horizontal,
                         IsAnimated = false,
-                        Margin = 10,
-                        BarAreaAlpha = 255,
+                        Margin = 15,
+                        BarAreaAlpha = 32,
                         BackgroundColor = SKColors.Transparent,
-                        MaxValue = 40,  // Set this value based on your data
+                        MaxValue = 32,
                         MinValue = 0,
                         LabelTextSize = 10,
+                        
+                        
                     };
 
                     chart.DrawContent(canvas, (int)size.Width, (int)size.Height);
@@ -108,7 +113,6 @@ ChartEntry[] GetChartEntries(string chartType)
             return Array.Empty<ChartEntry>();
     }
 }
-
 void AddPlayerTable(ColumnDescriptor column)
 {
     column.Item().Table(table =>
@@ -164,5 +168,5 @@ void AddPlayerTable(ColumnDescriptor column)
     });
 }
 
-//document.ShowInPreviewer();
-document.GeneratePdf("TeamsRating.pdf");
+document.ShowInPreviewer();
+//document.GeneratePdf("TeamsRating.pdf");
